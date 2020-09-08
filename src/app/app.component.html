@@ -1,3 +1,16 @@
-<h1>{{ title }} app is running!</h1>
+<h1>Hello, my name is {{ name }}</h1>
+
+Change name: <input type="text" [(ngModel)]="name"/>
+
+<p *ngIf="name.startsWith('LOVE')">You have won the price! An easter egg is comming your way sir.</p>
+<p *ngIf="name === 'LOVE ME LIKE YOU DO!'">Dang sir, you are on a streak!!</p>
+<p *ngIf="name === 'LOVE ME LIKE YOU DO!!'">STOP THIS MAD MAN</p>
+<p *ngIf="name === 'LOVE ME LIKE YOU DO!!!'">HE IS REACHING BREAKING POINT, THE UNIVERSE WILL COLLAPSE</p>
+<p *ngIf="name === 'LOVE ME LIKE YOU DO!!!!'">x(</p>
+
+<fun [message]="name"></fun>
+
+<button (click)="name = 'Jack'">Reset Name</button>
+<button style="background-color: #222; color: white;" onclick="alert('name x)')">Print Name</button>
 
 <router-outlet></router-outlet>
