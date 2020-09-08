@@ -1,4 +1,5 @@
 <h1>Hello, my name is {{ name }}</h1>
+<fun [message]="name"></fun>
 
 Change name: <input type="text" [(ngModel)]="name"/>
 
@@ -8,9 +9,11 @@ Change name: <input type="text" [(ngModel)]="name"/>
 <p *ngIf="name === 'LOVE ME LIKE YOU DO!!!'">HE IS REACHING BREAKING POINT, THE UNIVERSE WILL COLLAPSE</p>
 <p *ngIf="name === 'LOVE ME LIKE YOU DO!!!!'">x(</p>
 
-<fun [message]="name"></fun>
 
-<button (click)="name = 'Jack'">Reset Name</button>
-<button style="background-color: #222; color: white;" onclick="alert('name x)')">Print Name</button>
+<hr />
+
+<div>
+  <slider [images]='images'></slider>
+</div>
 
 <router-outlet></router-outlet>
