@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImagedbService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getImages(): Array<string> {
     return [
@@ -15,5 +17,9 @@ export class ImagedbService {
       "https://images.alphacoders.com/600/thumb-1920-600154.jpg",
       "https://images7.alphacoders.com/550/thumb-1920-550963.jpg"
     ];
+  }
+
+  getImagesAsync(): Observable<Array<string>> {
+    return this.http.get<Array<string>>("https://bcracker.dev/angular/images.json");
   }
 }

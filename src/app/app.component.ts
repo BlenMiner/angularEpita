@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImagedbService } from './imagedb.service'
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,13 @@ export class AppComponent {
   constructor(private imageService: ImagedbService) {}
 
   ngOnInit() {
-    this.images = this.imageService.getImages();
+    this.imageService.getImagesAsync().subscribe(
+      data => {
+        this.images = data;
+      },
+      (err: HttpErrorResponse) => {
+        this.images = ["./favicon.ico"];
+      }
+    );
   }
 }

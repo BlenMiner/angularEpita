@@ -1,6 +1,7 @@
 <div style="width: 900px; padding: 10px;" class="center panel">
-  <img [src]="images[selectedImage]" (click)="openImg()" style="max-height: 500px;" class="center"/>
-
+  <div style="height: 500px;">
+    <img [src]="images[selectedImage]" (click)="openImg()" style="max-height: 500px;" class="center"/>
+  </div>
   <br />
 
   <button (click)="prevImg()" class="dark" style="width: 200px;">Previous</button>
